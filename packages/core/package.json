@@ -1,0 +1,30 @@
+{
+	"name": "@gabroberge/core",
+	"version": "0.0.0",
+	"private": true,
+	"description": "",
+	"keywords": [],
+	"homepage": "https://github.com/gabroberge/turborepo-template#readme",
+	"bugs": "https://github.com/gabroberge/turborepo-template/issues",
+	"license": "MIT",
+	"author": "Gabriel Roberge",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gabroberge/turborepo-template.git"
+	},
+	"type": "module",
+	"main": "./dist/index.mjs",
+	"types": "./dist/index.d.mts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.mts",
+			"import": "./dist/index.mjs",
+			"default": "./dist/index.mjs"
+		}
+	},
+	"scripts": {
+		"build": "tsdown",
+		"lint": "eslint \"src/**/*.ts\"",
+		"test": "vitest run"
+	}
+}
