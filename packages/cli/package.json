@@ -1,5 +1,5 @@
 {
-	"name": "@kiln/core",
+	"name": "@kiln/cli",
 	"version": "0.0.0",
 	"private": true,
 	"description": "",
@@ -12,19 +12,20 @@
 		"type": "git",
 		"url": "https://github.com/gabroberge/kiln.git"
 	},
+	"bin": {
+		"kiln": "./dist/cli.mjs"
+	},
 	"type": "module",
-	"main": "./dist/index.mjs",
-	"types": "./src/index.ts",
 	"exports": {
-		".": {
-			"types": "./src/index.ts",
-			"import": "./dist/index.mjs",
-			"default": "./dist/index.mjs"
-		}
+		".": "./src/index.ts"
 	},
 	"scripts": {
 		"build": "tsdown",
 		"lint": "eslint \"src/**/*.ts\"",
 		"test": "vitest run"
+	},
+	"dependencies": {
+		"@kiln/core": "workspace:*",
+		"commander": "^15.0.0"
 	}
 }
